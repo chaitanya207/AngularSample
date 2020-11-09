@@ -1,14 +1,17 @@
 export const Users:any = [
     {
         id:1,
-        name:"Chaitanya"
+        name:"Chaitanya",
+        place:"Nellore"
     },
     {
         id:2,
-        name:"Yodha"
+        name:"Yodha",
+        place:"Nellore"
     },
     {
         id:3,
-        name:"Surendra"
+        name:"Surendra",
+        place:"Vedayapalem"
     }
 ];

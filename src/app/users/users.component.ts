@@ -6,6 +6,9 @@ import { User } from '../../assets/Models/user'
   template: `
     <div class="userDetails">
       <h3>{{userIndex}}:{{user?.name}}</h3>
+      <div [ngSwitch]="user.place">
+         <p *ngSwitchCase="'Nellore'">Nellore</p>
+      </div>
       <button (click)="onCourseView()">GetUser</button>
     </div>
   `,
