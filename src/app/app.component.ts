@@ -5,7 +5,8 @@ import { Users } from '../assets/data.db';
 @Component({
   selector: 'app-root',
   template: `
-  <app-users 
+  <app-users [ngClass]="{'isActive':true,'isUser':true}" [ngStyle]="{'text-decoration':'underline'}"
+  [style.background]="'red'"
   *ngFor="let user of users;index as i;first as isFirst;last as isLast;odd as isOdd;even as isEven"
   [class.isFirst]="isFirst"
   [class.isEven] = "isEven"
