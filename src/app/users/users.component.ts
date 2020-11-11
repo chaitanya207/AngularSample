@@ -4,11 +4,16 @@ import { User } from '../../assets/Models/user'
 @Component({
   selector: 'app-users',
   template: `
-    <div class="userDetails">
-      <h3>{{userIndex}}:{{user?.name}}</h3>
+    <div class="userDetails" #userDetails>
+      <h3 *ngIf="user.name;else userNotFound">{{userIndex}}:{{user.name}}</h3>
       <div [ngSwitch]="user.place">
          <p *ngSwitchCase="'Nellore'">Nellore</p>
       </div>
+      <ng-template #userNotFound>
+      <p>user Not Found!</p>
+      </ng-template>
+      
+      <ng-content #contentProj select="h1"></ng-content>
       <button (click)="onCourseView()">GetUser</button>
     </div>
   `,

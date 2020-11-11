@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ContentChild, ElementRef, ViewChild } from '@angular/core';
 import { User } from 'src/assets/Models/user';
 import { Users } from '../assets/data.db';
 import { UsersComponent } from './users/users.component';
@@ -13,13 +13,15 @@ import { UsersComponent } from './users/users.component';
   [class.isFirst]="isFirst"
   [class.isEven] = "isEven"
   (selectedUser)="onUserSelected($event)" 
-  [user]="user" [userIndex]="i+1"></app-users>
+  [user]="user" [userIndex]="i+1">
+  <h1>Hello Chaitanya</h1>
+  </app-users>
 </div>
   {{startDate | date:'MMM/dd/yyyy'}}
   `,
   styles: []
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
   users = Users;
   title = 'sampleApp';
@@ -32,12 +34,21 @@ export class AppComponent {
   @ViewChild('UserListParent')
   userDetails:ElementRef
 
+  @ContentChild('contentProj')
+  contentProj:ElementRef
+
   startDate = new Date();
 
   onUserSelected(user:User){
     console.log(user);
     console.log(this.user1);
     console.log(this.userDetails);
+    console.log(this.contentProj);
+
+  }
+
+  ngAfterViewInit(){
+
   }
 
 }

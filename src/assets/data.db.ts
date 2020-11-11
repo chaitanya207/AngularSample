@@ -1,6 +1,10 @@
 export const Users:any = [
     {
         id:1,
+        place:"Nellore"
+    },
+    {
+        id:1,
         name:"Chaitanya",
         place:"Nellore"
     },
